@@ -1,3 +1,40 @@
-.card-body{
-    background-color: aquamarine;
+.title {
+    height: 200px;
+    background-color: #212529;
+    color: aliceblue;
+    
+}
+
+
+
+.header-class{
+    height: 20rem;
+    width: 100%;
+    background-color: #212529;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    flex-wrap: wrap;
+    
+}
+.product-container{
+    height: 350px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+   
+    border-radius: 0.3rem;
+}
+.products{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-evenly;
+    margin: 3rem;
+}
+.product-image{
+    height: 50%;
+    width: 100%;
 }
