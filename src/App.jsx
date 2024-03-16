@@ -5,6 +5,7 @@ const TodoApp = () => {
   const [todos, setTodos] = useState([]);
   const [newTodo, setNewTodo] = useState({ name: '', description: '', status: 'Not Completed' });
   const [filterStatus, setFilterStatus] = useState('All');
+  const [editIndex, setEditIndex] = useState(null);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -15,7 +16,14 @@ const TodoApp = () => {
   };
 
   const addTodo = () => {
-    setTodos([...todos, { ...newTodo }]);
+    if (editIndex !== null) {
+      const updatedTodos = [...todos];
+      updatedTodos[editIndex] = { ...newTodo };
+      setTodos(updatedTodos);
+      setEditIndex(null);
+    } else {
+      setTodos([...todos, { ...newTodo }]);
+    }
     setNewTodo({ name: '', description: '', status: 'Not Completed' });
   };
 
@@ -32,6 +40,11 @@ const TodoApp = () => {
       return todo;
     });
     setTodos(updatedTodos);
+  };
+
+  const editTodo = (index) => {
+    setNewTodo({ ...todos[index] });
+    setEditIndex(index);
   };
 
   const filteredTodos = todos.filter(todo => {
@@ -62,10 +75,10 @@ const TodoApp = () => {
           value={newTodo.description}
           onChange={handleInputChange}
         />
-        <button onClick={addTodo}>Add Todo</button>
+        <button onClick={addTodo}>{editIndex !== null ? 'Update Todo' : 'Add Todo'}</button>
       </div>
-      
-      <select value={filterStatus} onChange={(e) => setFilterStatus(e.target.value)} >
+
+      <select value={filterStatus} onChange={(e) => setFilterStatus(e.target.value)}>
         <option value="All">All</option>
         <option value="Completed">Completed</option>
         <option value="Not Completed">Not Completed</option>
@@ -81,6 +94,7 @@ const TodoApp = () => {
               Change Status
             </button>
             <button onClick={() => deleteTodo(index)}>Delete</button>
+            <button onClick={() => editTodo(index)}>Edit</button>
           </div>
         ))}
       </div>
