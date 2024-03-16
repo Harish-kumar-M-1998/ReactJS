@@ -1,40 +1,65 @@
-.title {
-    height: 200px;
-    background-color: #212529;
-    color: aliceblue;
-    
-}
-
-
-
-.header-class{
-    height: 20rem;
-    width: 100%;
-    background-color: #212529;
+.todo-app {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto; /* Center the Todo App horizontally */
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    flex-wrap: wrap;
+    align-items: center; /* Center the Todo App vertically */
     
-}
-.product-container{
-    height: 350px;
-    width: 300px;
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  .input-container {
     display: flex;
-    flex-direction: column;
+    margin-bottom: 10px;
    
-    border-radius: 0.3rem;
-}
-.products{
+  }
+  
+  input[type="text"] {
+    padding: 5px;
+    margin-right: 10px;
+    background-color: #6bdff6;
+    border-radius: 50px;
+  }
+  
+  button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+
+  }
+  
+  select {
+    padding: 5px;
+    align-self: self-end;
+    max-width:auto;
+  }
+  
+  .todo-list {
+    margin-top: 30px;
     display: flex;
     flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: space-evenly;
-    margin: 3rem;
-}
-.product-image{
-    height: 50%;
-    width: 100%;
-}
+    gap: 20px;
+  }
+  
+  .todo-card {
+    background-color: #f9f9f9;
+    padding: 10px;
+  }
+  
+  .todo-card.Completed {
+    background-color: #d4edda; /* Light green for completed tasks */
+  }
+  
+  .todo-card button {
+    margin-top: 10px;
+    margin-right: 5px;
+  }
+  
