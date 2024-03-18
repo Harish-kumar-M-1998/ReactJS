@@ -16,15 +16,19 @@ const TodoApp = () => {
   };
 
   const addTodo = () => {
-    if (editIndex !== null) {
-      const updatedTodos = [...todos];
-      updatedTodos[editIndex] = { ...newTodo };
-      setTodos(updatedTodos);
-      setEditIndex(null);
+    if (newTodo.name.trim() !== '' && newTodo.description.trim() !== '') {
+      if (editIndex !== null) {
+        const updatedTodos = [...todos];
+        updatedTodos[editIndex] = { ...newTodo };
+        setTodos(updatedTodos);
+        setEditIndex(null);
+      } else {
+        setTodos([...todos, { ...newTodo }]);
+      }
+      setNewTodo({ name: '', description: '', status: 'Not Completed' });
     } else {
-      setTodos([...todos, { ...newTodo }]);
+      alert('Task Name and Description cannot be empty!');
     }
-    setNewTodo({ name: '', description: '', status: 'Not Completed' });
   };
 
   const deleteTodo = (index) => {
