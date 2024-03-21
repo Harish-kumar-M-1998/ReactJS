@@ -1,7 +1,7 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import GuviLogo from '../src/assets/Untitled design.png'
-import navimg1 from '../src/assets/6195552.jpg'
+import GuviLogo from '../src/assets/Guvi-blog-logo.png'
+import navimg1 from '../src/assets/blog-header.png'
 function TopNav() {
   return (
 <>

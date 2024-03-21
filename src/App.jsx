@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import TopNav from "../components/TopNav";
-import Nav from "../components/Nav";
+import TopNav from "./TopNav";
+import Nav from "./Nav";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import CardMap from "../components/CardMap";
-import Card from "../components/Card";
-import Footer from "../components/Footer";
+import CardMap from "./CardMap";
+import Card from "./Card";
+import Footer from "./Footer";
 
 function App() {
   const data = [
