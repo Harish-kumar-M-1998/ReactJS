@@ -1,65 +1,91 @@
-.todo-app {
-    font-family: Arial, sans-serif;
-    max-width: 800px;
-    margin: 0 auto; /* Center the Todo App horizontally */
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center the Todo App vertically */
-    
-  }
-  
-  h1 {
-    color: #333;
-  }
-  
-  .input-container {
-    display: flex;
-    margin-bottom: 10px;
-   
-  }
-  
-  input[type="text"] {
-    padding: 5px;
-    margin-right: 10px;
-    background-color: #6bdff6;
-    border-radius: 50px;
-  }
-  
-  button {
-    padding: 5px 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
+.topnav{
+  border-bottom: lightgrey   solid 1px;
+}
+#menu {
+	background: #FFFFFF;
+	height: auto;
+	border-radius: 10px;
+  border-bottom: lightgrey   solid 1px;
+  border-top:  lightgrey   solid 1px;
+  font-family: "dm sans", sans-serif ;
+}
+#menu ul, #menu li {
+	margin: 0 auto;
+	padding: 5px 15px;
+	list-style: none
 
-  }
+}
+#menu ul  {
+	width: 100%;
+	text-align: center;
   
-  select {
-    padding: 5px;
-    align-self: self-end;
-    max-width:auto;
-  }
+}
+#menu li{
+	display: inline-block;
+  cursor: pointer;
+}
+.link-style {
+  text-decoration: none;
+  color: black;
+    
+}
+
+#menu li :hover {
+	color: #0aaa01;
+	background: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 10px;
   
-  .todo-list {
-    margin-top: 30px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
+}
+
+
+.card-container{
+  font-family: "dm sans", sans-serif;
+  font-size: 21px;
+  margin: auto 15%;
+  border-radius: 8px;
   
-  .todo-card {
-    background-color: #f9f9f9;
-    padding: 10px;
-  }
+}
+.card{
+  box-shadow: inset 0px -14px 300px -163px rgba(0,0,0,0.75);
   
-  .todo-card.Completed {
-    background-color: #d4edda; /* Light green for completed tasks */
-  }
+
+}
+.card:hover{
   
-  .todo-card button {
-    margin-top: 10px;
-    margin-right: 5px;
-  }
+box-shadow: rgba(0, 0, 0, 0.30) 0px 0px 10px 0px
+}
+.card-text{
+  color: #777777;
+  font-size: 14px;
+}
+.card-read{
+  color: #0aaa01;
+  font-size: 14px;
+  cursor: pointer;
+}
+.custom-card-footer{
+  color: #adadad;
+  display: flex;
+  font-size: 14px;
+
+}
+.custom-card-footer li{
+ padding-left: 20px;
+ font-size: 14px;
+
+}
+
+footer {
+  background-color: #ffffff;
+  color: #707070;
+  padding-top: 1%;
+  text-align: center;
+  margin-top: 5%;
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-around;
+  border-bottom: lightgrey   solid 1px;
+  border-top: lightgrey   solid 1px;
   
+}
