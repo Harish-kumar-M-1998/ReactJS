@@ -105,9 +105,9 @@ function App() {
   }
 
   return (
-    <div>
+    <div className='container'>
       <h1> Axios Management</h1>
-      <div className='input-group'>{editingUser ? (
+      <div className='input-group container '>{editingUser ? (
         <div className='input' >
           <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Name" />
           <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
