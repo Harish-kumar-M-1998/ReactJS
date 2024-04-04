@@ -1,0 +1,21 @@
+.custom-card {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: flex-start;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .custom-card-img-and-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  @media (max-width: 768px) {
+    .custom-card {
+      flex-direction: column;
+    }
+  }
+  

@@ -1,35 +1,49 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// App.js
+import React from 'react';
+import { Provider, useSelector } from 'react-redux';
+import store from './components/store';
+import Product from './components/product';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  return (
+    <Provider store={store}>
+      <div className="container">
+        <h1 className="mt-3">Product List</h1>
+        <TotalSummary />
+        <ProductList />
+      </div>
+    </Provider>
+  );
+};
+
+const ProductList = () => {
+  const products = useSelector(state => state.products.products);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="row">
+      {products.map(product => (
+        <div key={product.id} className="col-md-4">
+          <Product product={product} />
+        </div>
+      ))}
+    </div>
+  );
+};
 
-export default App
+const TotalSummary = () => {
+  const totalQuantity = useSelector(state => state.products.totalQuantity);
+  const totalAmount = useSelector(state => state.products.totalAmount);
+
+  return (
+    <div className="mt-3" style={{ display: 'flex', justifyContent: 'flex-end' }}>
+      <div style={{ marginRight: '10px' }}>
+        <p>Total Quantity: {totalQuantity}</p>
+      </div>
+      <div>
+        <p>Total Amount: ${totalAmount}</p>
+      </div>
+    </div>
+  );
+};
+
+export default App;
